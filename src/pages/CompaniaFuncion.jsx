@@ -32,7 +32,7 @@ function CompaniaFuncion() {
                 luego, confirma el inicio de viaje.
               </p>
               <img
-                src="https://cdn-icons.flaticon.com/png/512/3840/premium/3840653.png?token=exp=1644606409~hmac=6825da79994524e7506dd0a6d4e4ea8d"
+                src="./public/numero-1.png"
                 className="img"
                 alt=""
               />
@@ -40,7 +40,7 @@ function CompaniaFuncion() {
             <div>
               <h2 className="h2">El usuario abre la app</h2>
               <img
-                src="https://cdn-icons.flaticon.com/png/512/3840/premium/3840738.png?token=exp=1644606409~hmac=a100b82d4af09baf4895051db3aed963"
+                src="./public/numero-2.png"
                 className="img"
                 alt=""
               />
@@ -48,21 +48,21 @@ function CompaniaFuncion() {
 
             <div>
               <img
-                src="https://cdn-icons.flaticon.com/png/512/3840/premium/3840739.png?token=exp=1644606409~hmac=9bf7b419360798c2cf3a72ee80c84b74"
+                src="./public/numero-3.png"
                 className="img"
                 alt=""
               />
             </div>
             <div>
               <img
-                src="https://cdn-icons.flaticon.com/png/512/3840/premium/3840753.png?token=exp=1644606824~hmac=16e4583b3376a7c7cbe7fae64deab4b9"
+                src="./public/numero-4.png"
                 className="img"
                 alt=""
               />
             </div>
             <div>
               <img
-                src="https://cdn-icons.flaticon.com/png/512/3840/premium/3840754.png?token=exp=1644606874~hmac=c83a4b5f0f0a5bffad4f892aed449351"
+                src="./public/numero-5.png"
                 className="img"
                 alt=""
               />

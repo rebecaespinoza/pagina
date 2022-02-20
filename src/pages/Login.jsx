@@ -1,28 +1,35 @@
-import React, { useState } from "react";
-import {useDispatch } from 'react-redux';
+import React,{ useState } from "react";
+import {useDispatch, useSelector } from 'react-redux';
 import "../estilos/Login.css";
 import { useForm } from "../hooks/useForm";
 import { Button } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import { login } from "../actions/auth";
+import{ startLoginEmailContrasena , startGoogleLogin} from "../actions/auth";
 
 function Login()
 {
- /* const dispatch = useDispatch();
+  const dispatch = useDispatch();
+  const {loading}= useSelector( state => state.ui );
 
   const [formValues, handleInputChange ] = useForm({
      email :'rebe@gmail.com',
-     contrasena:'123'
-  });*/
+     contrasena:'12334'
+  });
+  const { email, contrasena} = formValues;
 
-  const [email, setEmail] = useState("");
-  const [contrasena, setContrasena] = useState("");
+  /*const [email, setEmail] = useState("");
+  const [contrasena, setContrasena] = useState("");*/
 
   const handleLogin = (e) => {
     e.preventDefault();
-    console.log(email, contrasena);
-    /*dispatch( login(123,'rebeca') );*/
-  };
+    /*console.log(email, contrasena);*/
+    dispatch( startLoginEmailContrasena(email, contrasena) );
+  }
+
+  const handleGoogleLogin = () =>{
+    dispatch( startGoogleLogin() );
+  }
 
   return (
     <>
@@ -43,20 +50,7 @@ function Login()
                   <p class="text-center fw-bold mx-3 mb-0">Inicia Sesion</p>
                 </div>
 
-                <div className="auth__social-networks">
-                  <button class="google-btn">
-                    <div className="google-icon-wrapper">
-                      <img
-                        className="google-icon"
-                        src="https://upload.wikimedia.org/wikipedia/commons/5/53/Google_%22G%22_Logo.svg"
-                        alt="google button"
-                      />
-                    </div>
-                    <p className="btn-text">
-                      <b>Sign in with google</b>
-                    </p>
-                  </button>
-                </div>
+                
 
                 <p class="text-center fw-bold mx-3 mb-0">
                   <optgroup></optgroup>
@@ -72,7 +66,8 @@ function Login()
                     class="form-control form-control-lg"
                     placeholder="Ingrese su email"
                     value={email}
-                    onChange={(e) => setEmail(e.target.value)}
+                    onChange={handleInputChange}
+                    /*onChange={(e) => setEmail(e.target.value)}*/
                   />
                 </div>
 
@@ -86,7 +81,8 @@ function Login()
                     class="form-control form-control-lg"
                     placeholder="Ingrese su contraseña"
                     value={contrasena}
-                    onChange={(e) => setContrasena(e.target.value)}
+                    onChange={handleInputChange}
+                    /*onChange={(e) => setContrasena(e.target.value)}*/
                   />
                 </div>
 
@@ -97,10 +93,28 @@ function Login()
                   </a>
                 </div>
 
+                <div className="auth__social-networks">
+                  <div className="btn-google" onClick={handleGoogleLogin}>
+                    <div className="google-icon-wrapper">
+                      <img
+                        className="google-icon-wrapper"
+                        src="https://upload.wikimedia.org/wikipedia/commons/5/53/Google_%22G%22_Logo.svg"
+                        alt="google button"
+                      />
+                    </div>
+                    <p className="btn-text">
+                      <b>Sign in with google</b>
+                    </p>
+                  </div>
+                </div>
+
                 <div class="text-center text-lg-start mt-4 pt-2">
-                  <Link to="/home">
-                    <Button class="btn btn-primary btn-lg">Iniciar</Button>
-                  </Link>
+               <button 
+               type="submit"
+               class="btn btn-primary btn-lg" 
+               disabled={loading}
+               >Iniciar
+               </button>
                   <p class="small fw-bold mt-2 pt-1 mb-0">
                     No tienes cuenta?{" "}
                     <Link to="/registro">

@@ -13,7 +13,10 @@ añadirUsuario(datosUsuario, action)
 lo que hace la funcion es recibir el objeto o los datos del usuario para 
 usarla segun la accion que hemos especificado
 Buscar: useReducer, Redux
-*/ 
+
+*/
+
+
 export const AuthReducers = ( state = {}, action ) => {
   switch(action.type){
       case types.login:
