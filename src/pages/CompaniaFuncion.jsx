@@ -55,7 +55,7 @@ function CompaniaFuncion() {
             </div>
             <div>
               <img
-                src="./public/numero-4.png"
+                src="./public/numero-4=.png"
                 className="img"
                 alt=""
               />
